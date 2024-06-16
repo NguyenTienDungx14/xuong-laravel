@@ -7,7 +7,7 @@ Route::prefix('/admin')->as('admin.')->group(function () {
 
     Route::get('/', function ()
     {
-        return 'Đây là trang dashboard';
+        return view('admin.dashboard');
     });
     Route::prefix('catalogues')->as('catalogues.')->group(function () {
         Route::get('/',                 [\App\Http\Controllers\Admin\CatalogueController::class,'index'])->name('index');

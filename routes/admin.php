@@ -8,7 +8,7 @@ Route::prefix('/admin')->as('admin.')->group(function () {
     Route::get('/', function ()
     {
         return view('admin.dashboard');
-    });
+    })->name('dashboard');
     Route::prefix('catalogues')->as('catalogues.')->group(function () {
         Route::get('/',                 [\App\Http\Controllers\Admin\CatalogueController::class,'index'])->name('index');
         Route::get('create',            [\App\Http\Controllers\Admin\CatalogueController::class,'create'])->name('create');
